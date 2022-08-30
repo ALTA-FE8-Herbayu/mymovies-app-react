@@ -1,8 +1,6 @@
 import "./App.css";
 import ListMovie from "./components/ListMovie";
 import Navbars from "./components/Navbars";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 
