@@ -48,8 +48,8 @@ export default class App extends Component {
                 title: "AFTER THE PANDEMIC",
             },
             {
-                image: "https://images.moviesanywhere.com/8f8eddfbd1601b08eca7ec4d94d0f2f9/cc03e65a-a155-413b-bf7e-6d03fea6f0c4.jpg",
-                title: "FWB",
+                image: "https://awsimages.detik.net.id/community/media/visual/2021/11/22/film-one-piece-red_11.jpeg?w=700&q=90",
+                title: "One Piece RED",
             },
             {
                 image: "https://pbs.twimg.com/media/FMNyLKOUYAoLjpj?format=jpg&name=4096x4096",
