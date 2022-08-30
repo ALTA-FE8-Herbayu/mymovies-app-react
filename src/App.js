@@ -59,7 +59,7 @@ export default class App extends Component {
         return (
             <div>
                 <Navbars />
-                <h1 className="text-center" style={{ marginTop: "95px" }}>
+                <h1 className="text-center" style={{ marginTop: "60px" }}>
                     Now Playing
                 </h1>
                 <Container className="kontainer d-flex" style={{ marginTop: "1rem" }}>

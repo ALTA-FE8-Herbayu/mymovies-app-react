@@ -7,7 +7,7 @@ export default class Navbars extends Component {
     render() {
         return (
             <>
-                <Navbar bg="dark" expand="lg" className="h-5 fixed-top">
+                <Navbar bg="dark" expand="lg" className="h-5" sticky="top">
                     <Container>
                         <Navbar.Brand href="#home" className="fs-4 text-white">
                             <i class="bi bi-film"></i> Movie
