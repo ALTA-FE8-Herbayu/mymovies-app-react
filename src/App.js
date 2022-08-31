@@ -39,7 +39,7 @@ export default class App extends Component {
                         {listMovies.map((item, i) => {
                             return (
                                 <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 justify-content-center d-flex" key={i}>
-                                    <ListMovie className="text-center" image={baselMage + item.poster_path} judul={item.title} />
+                                    <ListMovie className="text-center" image={baselMage + item.poster_path} rate={item.vote_average} judul={item.title} />
                                 </div>
                             );
                         })}
