@@ -29,7 +29,7 @@ export default class App extends Component {
     render() {
         const { listMovies } = this.state;
         return (
-            <div>
+            <div className="bg-light">
                 <Navbars />
                 <h1 className="text-center" style={{ marginTop: "60px" }}>
                     Now Playing
