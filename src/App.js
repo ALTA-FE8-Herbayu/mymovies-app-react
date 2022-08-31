@@ -6,8 +6,8 @@ import { Container } from "react-bootstrap";
 import axios from "axios";
 
 const baseUrl = "https://api.themoviedb.org/3/";
-const urlHeadline = baseUrl + "movie/157336?" + `api_key=${process.env.REACT_APP_API_KEY}`;
-const baselMage = "https://image.tmdb.org/t/p/original/[poster_path]";
+const urlHeadline = baseUrl + "discover/movie?" + `api_key=${process.env.REACT_APP_API_KEY}`;
+const baselMage = "https://image.tmdb.org/t/p/original/";
 export default class App extends Component {
     state = {
         listMovies: [],
@@ -17,9 +17,9 @@ export default class App extends Component {
         axios
             .get(urlHeadline)
             .then((response) => {
-                console.log(response.data);
+                console.log(response.data.results);
                 self.setState({
-                    listMovies: response.data,
+                    listMovies: response.data.results,
                 });
             })
             .catch((error) => {
@@ -39,7 +39,7 @@ export default class App extends Component {
                         {listMovies.map((item, i) => {
                             return (
                                 <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 justify-content-center d-flex" key={i}>
-                                    <ListMovie className="text-center" image={item.images} judul={item.title} />
+                                    <ListMovie className="text-center" image={baselMage + item.poster_path} judul={item.title} />
                                 </div>
                             );
                         })}
