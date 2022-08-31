@@ -16,7 +16,7 @@ export default class App extends Component {
                 title: "ALADDIN",
             },
             {
-                image: "https://lh5.googleusercontent.com/qnWkvc6QJWgo0rsehHpSox06AWBfWePmODUPSjCf2MTlOi36D4kgTS2iwlBQzwrbfW0G9R1qHHCgHhsyYHclryZzmzv3N3y17Mv21WrWFL7lzQ96P3clNB-WvDDD8_jlE2VTbl53M9PK5x368Q",
+                image: "https://cdn0-production-images-kly.akamaized.net/UV2d_uwDPz5uKY6u-2DzrikKRqY=/640x853/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3999523/original/076350300_1650347498-FQobVY2UcAMkRSa.jpg",
                 title: "LOVE and THUNDER",
             },
             {
