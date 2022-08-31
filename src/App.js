@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 import axios from "axios";
 
 const baseUrl = "https://api.themoviedb.org/3/";
-const urlHeadline = baseUrl + "discover/movie?" + `api_key=${process.env.REACT_APP_API_KEY}`;
+const urlHeadline = `${baseUrl}discover/movie?api_key=${process.env.REACT_APP_API_KEY}`;
 const baselMage = "https://image.tmdb.org/t/p/original/";
 export default class App extends Component {
     state = {
