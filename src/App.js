@@ -8,7 +8,7 @@ import "animate.css";
 
 const baseUrl = "https://api.themoviedb.org/3/";
 const urlHeadline = `${baseUrl}discover/movie?api_key=${process.env.REACT_APP_API_KEY}`;
-const baselMage = "https://image.tmdb.org/t/p/original/";
+const baseImage = "https://image.tmdb.org/t/p/original/";
 export default class App extends Component {
     state = {
         listMovies: [],
@@ -40,7 +40,7 @@ export default class App extends Component {
                         {listMovies.map((item, i) => {
                             return (
                                 <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 justify-content-center d-flex" key={i}>
-                                    <ListMovie className="text-center" image={baselMage + item.poster_path} rate={item.vote_average} judul={item.title} />
+                                    <ListMovie className="text-center" image={baseImage + item.poster_path} rate={item.vote_average} judul={item.title} />
                                 </div>
                             );
                         })}
