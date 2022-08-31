@@ -4,6 +4,7 @@ import Navbars from "./components/Navbars";
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import axios from "axios";
+import "animate.css";
 
 const baseUrl = "https://api.themoviedb.org/3/";
 const urlHeadline = `${baseUrl}discover/movie?api_key=${process.env.REACT_APP_API_KEY}`;
