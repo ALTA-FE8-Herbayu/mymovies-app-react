@@ -10,7 +10,9 @@ export default class ListMovie extends Component {
                     <Card style={{ width: "17.5rem", height: "36rem" }} className="my-5 shadow-lg bg-dark border border-light">
                         <Card.Img className="img-fluid" variant="top" src={this.props.image} style={{ height: "25rem" }} />
                         <Card.Body>
-                            <Card.Text className="text-center text-white">Rating:{this.props.rate}</Card.Text>
+                            <Card.Text className="text-center text-white">
+                                <i class="bi bi-star"></i> Rating: {this.props.rate}/10
+                            </Card.Text>
                             <Card.Title className="text-center text-white">{this.props.judul}</Card.Title>
                         </Card.Body>
                         <Button className="p-2" variant="success">
