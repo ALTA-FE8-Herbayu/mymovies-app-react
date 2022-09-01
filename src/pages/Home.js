@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import axios from "axios";
+// import { WithRouter } from "../WithRouter";
 import Navbars from "../components/Navbars";
 import ListMovie from "../components/ListMovie";
 import "animate.css";
@@ -27,6 +28,14 @@ export default class Home extends Component {
                 alert(error);
             });
     }
+    // handleDetailPage(item, event) {
+    //     this.props.navigate("/details", {
+    //         state: {
+    //             overview: item.overview,
+    //             image: item.image,
+    //         },
+    //     });
+    // }
     render() {
         const { listMovies } = this.state;
         return (
@@ -40,7 +49,16 @@ export default class Home extends Component {
                         {listMovies.map((item, i) => {
                             return (
                                 <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 justify-content-center d-flex" key={i}>
-                                    <ListMovie className="text-center" image={baseImage + item.poster_path} rate={item.vote_average} judul={item.title} />
+                                    <ListMovie
+                                        className="text-center cursor-pointer"
+                                        image={baseImage + item.poster_path}
+                                        rate={item.vote_average}
+                                        judul={item.title}
+                                        overview={item.overview}
+                                        popularitas={item.popularity}
+                                        rilis={item.release_date}
+                                        // onClick={() => this.handleDetailPage(item)}
+                                    />
                                 </div>
                             );
                         })}
