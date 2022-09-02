@@ -1,20 +1,18 @@
 import "./App.css";
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import DetailPages from "./pages/DetailPages";
+import { Homes } from "./pages/Homes";
+import { DetailPage } from "./pages/DetailPage";
 
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <Router>
-                    <Routes>
-                        <Route exact path="/" element={<Home />} />
-                        <Route path="/details" element={<DetailPages />} />
-                    </Routes>
-                </Router>
-            </div>
-        );
-    }
-}
+export const App = () => {
+    return (
+        <div>
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={<Homes />} />
+                    <Route path="/details/:rilis" element={<DetailPage />} />
+                </Routes>
+            </Router>
+        </div>
+    );
+};
