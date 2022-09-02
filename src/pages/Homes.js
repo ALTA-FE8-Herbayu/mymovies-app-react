@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Navbars } from "../components/Navbars";
+import { ListMovies } from "../components/ListMovies";
 import axios from "axios";
 import "animate.css";
-import { ListMovies } from "../components/ListMovies";
-import { Navbars } from "../components/Navbars";
 
 const baseUrl = "https://api.themoviedb.org/3/";
 const urlHeadline = `${baseUrl}discover/movie?api_key=${process.env.REACT_APP_API_KEY}`;
@@ -29,7 +29,7 @@ export const Homes = () => {
 
     const handleClick = (item) => {
         console.log(item.title);
-        navigate(`/details/${item.description}`, {
+        navigate(`/details/${item.title}`, {
             state: {
                 image: baseImage + item.poster_path,
                 rate: item.vote_average,
