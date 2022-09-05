@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-export const ListMovies = ({ image, rate, judul, onClick }) => {
+export const ListMovies = ({ image, rate, judul, onClick, mode }) => {
     return (
         <>
             <div className="animate__animated animate__jackInTheBox" style={{ animationDuration: "3.5s" }}>
-                <Card style={{ width: "17.5rem", height: "36rem" }} className="my-5 shadow-lg bg-dark border border-light">
+                <Card style={{ width: "17.5rem", height: "36rem", color: mode === "light" ? "black" : "white" }} className="my-5 bg-dark shadow-lg border border-light">
                     <Card.Img className="img-fluid" variant="top" src={image} style={{ height: "25rem" }} onClick={onClick} />
                     <Card.Body>
                         <Card.Text className="text-center text-white">

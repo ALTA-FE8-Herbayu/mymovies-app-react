@@ -13,7 +13,6 @@ const baseImage = "https://image.tmdb.org/t/p/original/";
 export const Homes = () => {
     const [movies, setMovies] = useState([]);
 
-    // const location = useLocation();
     const navigate = useNavigate();
     const getMovies = async () => {
         await axios
@@ -44,10 +43,35 @@ export const Homes = () => {
     useEffect(() => {
         getMovies();
     }, []);
+    const [mode, setmode] = useState("light"); //State about dark-mode
+    const [alert, setAlert] = useState(null);
+
+    const showAlert = (message, type) => {
+        setAlert({
+            msg: message,
+            type: type,
+        });
+        setTimeout(() => {
+            setAlert(null);
+        }, 1500);
+    };
+
+    const toggleMode = () => {
+        if (mode === "light") {
+            setmode("dark");
+            document.body.style.backgroundColor = "#323638"; //'#042743'
+            showAlert("Dark Mode has been Enabled", "success");
+        } else {
+            setmode("light");
+            document.body.style.backgroundColor = "white";
+            showAlert("Light Mode has been Enabled", "success");
+        }
+    };
+
     return (
         <div>
-            <Navbars />
-            <h1 className="text-center" style={{ marginTop: "60px" }}>
+            <Navbars title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} />
+            <h1 className="text-center" style={{ marginTop: "60px", color: mode === "light" ? "black" : "white" }}>
                 Now Playing
             </h1>
             <Container>
@@ -64,6 +88,7 @@ export const Homes = () => {
                                     popularitas={item.popularity}
                                     rilis={item.release_date}
                                     onClick={() => handleClick(item)}
+                                    mode={mode}
                                 />
                             </div>
                         );
