@@ -2,7 +2,7 @@
 
 # Project ini mengandung : 
 1. React-Router-Dom (Browser router, Router, Routes, useNavigate, useLocation)
-2. React-Bootstrap
+2. React-Bootstrap (dark-mode)
 3. Hooks (useState, useEffect)
 4. axios (untuk consume API)
 5. React Icons
