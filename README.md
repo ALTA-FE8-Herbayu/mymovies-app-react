@@ -1,5 +1,9 @@
 Untuk Domain upload nya : https://mymovies-app-react-iota.vercel.app/
-
+Project ini mengandung : {
+1. React-Router-Dom (Browser router, Router, Routes)
+2. React-Bootstrap
+3. Hooks (useState, useLocation)
+}
 
 # Getting Started with Create React App
 
