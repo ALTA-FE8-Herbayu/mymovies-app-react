@@ -15,14 +15,9 @@ export const ListMovies = ({ image, rate, judul, onDetail, mode, onFavorite }) =
                         </Card.Text>
                         <Card.Title className="text-center text-white">{judul}</Card.Title>
                     </Card.Body>
-                    <span>
-                        <Button className="p-2" variant="success" onClick={onFavorite}>
-                            Add to Favorite
-                        </Button>
-                        <Button className="p-2" variant="warning" onClick={() => navigate("/favorites")}>
-                            to Favorite Page
-                        </Button>
-                    </span>
+                    <Button className="p-2" variant="success" onClick={onFavorite}>
+                        Add to Favorite
+                    </Button>
                 </Card>
             </div>
         </>
