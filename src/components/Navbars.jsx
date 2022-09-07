@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbars = ({ mode, toggleMode }) => {
     const navigate = useNavigate();
@@ -14,12 +14,12 @@ export const Navbars = ({ mode, toggleMode }) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav bg-light" style={{ backgroundColor: "white" }} />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="/favorites" className="text-white fs-4">
+                            <Link to="/favorites" className="text-white fs-4 text-decoration-none">
                                 Favorite
-                            </Nav.Link>
+                            </Link>
                             <hr style={{ color: "white" }} />
                             {/* Toggle Btn for dark/light mode */}
-                            <div className={`form-check form-switch my-auto text-${mode === "light" ? "dark" : "light"}`}>
+                            <div className={` ms-2 form-check form-switch my-auto text-${mode === "light" ? "dark" : "light"}`}>
                                 <input className="form-check-input" onClick={toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
                                     Dark Mode

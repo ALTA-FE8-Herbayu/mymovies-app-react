@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-export const ListMovies = ({ image, rate, judul, onDetail, mode, onFavorite, onGo }) => {
-    // const navigate = useNavigate();
+export const ListMovies = ({ image, rate, judul, onDetail, mode, onFavorite }) => {
+    const navigate = useNavigate();
     return (
         <>
             <div className="animate__animated animate__jackInTheBox" style={{ animationDuration: "3.5s" }}>
@@ -14,9 +15,14 @@ export const ListMovies = ({ image, rate, judul, onDetail, mode, onFavorite, onG
                         </Card.Text>
                         <Card.Title className="text-center text-white">{judul}</Card.Title>
                     </Card.Body>
-                    <Button className="p-2" variant="success" onClick={onFavorite}>
-                        Add to Favorite
-                    </Button>
+                    <span>
+                        <Button className="p-2" variant="success" onClick={onFavorite}>
+                            Add to Favorite
+                        </Button>
+                        <Button className="p-2" variant="warning" onClick={() => navigate("/favorites")}>
+                            to Favorite Page
+                        </Button>
+                    </span>
                 </Card>
             </div>
         </>

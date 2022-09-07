@@ -31,9 +31,8 @@ export const Homes = () => {
     const addToFavorite = (item) => {
         handleFavo(item);
         // navigate("/favorites");
+        console.log(favo, "ini favo");
     };
-
-    console.log(favo, "ini favo");
 
     const handleClick = (item) => {
         console.log(item.title);
