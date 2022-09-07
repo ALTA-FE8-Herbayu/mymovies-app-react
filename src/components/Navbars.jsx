@@ -14,7 +14,7 @@ export const Navbars = ({ mode, toggleMode }) => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav bg-light" style={{ backgroundColor: "white" }} />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="#link" className="text-white fs-4">
+                            <Nav.Link href="/favorites" className="text-white fs-4">
                                 Favorite
                             </Nav.Link>
                             <hr style={{ color: "white" }} />

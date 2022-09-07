@@ -5,6 +5,7 @@ import { Navbars } from "../components/Navbars";
 import { ListMovies } from "../components/ListMovies";
 import axios from "axios";
 import "animate.css";
+import { useMovieContext } from "../context/MovieProvider";
 
 const baseUrl = "https://api.themoviedb.org/3/";
 const urlHeadline = `${baseUrl}discover/movie?api_key=${process.env.REACT_APP_API_KEY}`;
@@ -12,19 +13,27 @@ const baseImage = "https://image.tmdb.org/t/p/original/";
 
 export const Homes = () => {
     const [movies, setMovies] = useState([]);
-
+    const { favo, handleFavo } = useMovieContext();
     const navigate = useNavigate();
     const getMovies = async () => {
         await axios
             .get(urlHeadline)
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 setMovies(response.data.results);
             })
             .catch((error) => {
                 console.log(error);
             });
     };
+
+    // untuk passing ke favorite page
+    const addToFavorite = (item) => {
+        handleFavo(item);
+        // navigate("/favorites");
+    };
+
+    console.log(favo, "ini favo");
 
     const handleClick = (item) => {
         console.log(item.title);
@@ -87,7 +96,8 @@ export const Homes = () => {
                                     overview={item.overview}
                                     popularitas={item.popularity}
                                     rilis={item.release_date}
-                                    onClick={() => handleClick(item)}
+                                    onDetail={() => handleClick(item)}
+                                    onFavorite={() => addToFavorite(item)}
                                     mode={mode}
                                 />
                             </div>
