@@ -13,7 +13,7 @@ const baseImage = "https://image.tmdb.org/t/p/original/";
 
 export const Homes = () => {
     const [movies, setMovies] = useState([]);
-    const { favo, handleFavo } = useMovieContext();
+    const { handleFavo } = useMovieContext();
     const navigate = useNavigate();
     const getMovies = async () => {
         await axios
@@ -28,10 +28,14 @@ export const Homes = () => {
     };
 
     // untuk passing ke favorite page
-    const addToFavorite = (item) => {
-        handleFavo(item);
-        // navigate("/favorites");
-        console.log(favo, "ini favo");
+    // const addToFavorite = (item) => {
+    //     handleFavo(item);
+    //     // navigate("/favorites");
+    //     console.log(favo, "ini favo");
+    // };
+
+    const favourites = () => {
+        navigate("/favorites");
     };
 
     const handleClick = (item) => {
@@ -78,7 +82,7 @@ export const Homes = () => {
 
     return (
         <div>
-            <Navbars title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} />
+            <Navbars title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} fav={() => favourites()} />
             <h1 className="text-center" style={{ marginTop: "60px", color: mode === "light" ? "black" : "white" }}>
                 Now Playing
             </h1>
@@ -96,7 +100,7 @@ export const Homes = () => {
                                     popularitas={item.popularity}
                                     rilis={item.release_date}
                                     onDetail={() => handleClick(item)}
-                                    onFavorite={() => addToFavorite(item)}
+                                    onFavorite={() => handleFavo(item)}
                                     mode={mode}
                                 />
                             </div>

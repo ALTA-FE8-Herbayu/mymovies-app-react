@@ -7,9 +7,9 @@ export const useMovieContext = () => {
     const [favo, setFavo] = context.favo;
     const [deleteItem, setDeleteItem] = context.deleteItem;
 
-    useEffect(() => {
-        handleFavo();
-    }, []);
+    // useEffect(() => {
+    //     handleFavo();
+    // }, []);
 
     const handleFavo = (item) => {
         const newFavo = [...favo, { item }];
