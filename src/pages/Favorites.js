@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Container, Card, Button, Row } from "react-bootstrap";
 import { Navbars } from "../components/Navbars";
 import { useMovieContext } from "../context/MovieProvider";
@@ -7,11 +7,6 @@ const Favorites = ({ mode }) => {
     const baseImage = "https://image.tmdb.org/t/p/original/";
     const { favo, removeFavo } = useMovieContext();
     console.log(favo, "ini di favorites page");
-
-    // const deleteFavo = () => {
-    //     setListFavo(favo.shift());
-    //     setListFavo(favo.pop());
-    // };
 
     useEffect(() => {
         favo.shift();

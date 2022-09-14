@@ -1,9 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 
 export const ListMovies = ({ image, rate, judul, onDetail, mode, onFavorite }) => {
-    const navigate = useNavigate();
     return (
         <>
             <div className="animate__animated animate__jackInTheBox" style={{ animationDuration: "3.5s" }}>

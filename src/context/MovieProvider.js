@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 export const MovieContext = createContext();
 
@@ -6,10 +6,6 @@ export const useMovieContext = () => {
     const context = useContext(MovieContext);
     const [favo, setFavo] = context.favo;
     const [deleteItem, setDeleteItem] = context.deleteItem;
-
-    // useEffect(() => {
-    //     handleFavo();
-    // }, []);
 
     const handleFavo = (item) => {
         const newFavo = [...favo, { item }];
